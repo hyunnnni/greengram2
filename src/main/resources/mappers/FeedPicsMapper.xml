@@ -5,9 +5,13 @@
 <mapper namespace="com.example.greengram2.feed.FeedPicsMapper">
 
     <select id="selFeedPicsAll">
-        SELECT pic
+        SElect pic
         FROM t_feed_pics
         WHERE ifeed = #{ifeed}
     </select>
 
+    <delete id="delFeedPics">
+        DELETE FROM t_feed_pics
+        WHERE ifeed = #{ifeed}
+    </delete>
 </mapper>

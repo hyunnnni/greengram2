@@ -2,9 +2,7 @@ package com.example.greengram2.user;
 
 
 import com.example.greengram2.ResVo;
-import com.example.greengram2.user.model.UserSigninDto;
-import com.example.greengram2.user.model.UserSigninVo;
-import com.example.greengram2.user.model.UserSignupDto;
+import com.example.greengram2.user.model.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
@@ -33,7 +31,7 @@ public class UserController {
             @Parameter(name ="pic", description = "프로필 사진")
     })//각각 하나씩 받을 수 있다
     @PostMapping("/signup")
-    public ResVo postSingup(@RequestBody UserSignupDto dto){
+    public ResVo postSingup( @RequestBody UserSignupDto dto){
         log.info("dto: {}", dto);
         //{} = %와 같다
         //ResVo 객체에 insert한 레코드 pk값을 담아서 응답처리
@@ -47,5 +45,16 @@ public class UserController {
     @PostMapping("/signin")
     public UserSigninVo postSignin(@RequestBody UserSigninDto dto){
         return service.postSignin(dto);
+    }
+    //난 너무못해 바본가바 ㅜㅜ
+    @GetMapping
+    public UserInfoVo getprofile(@RequestParam(value = "target_iuser", required = true) int targetIuser){
+        log.info("targetIuser : {} ", targetIuser);
+        return service.getprofile(targetIuser);
+    }
+    //멍청해서 너무 힘들어ㅜㅜ
+    @PatchMapping("/pic")
+    public ResVo patchUserPic(@RequestBody UserPatchPicDto dto){
+        return service.patchUserPic(dto);
     }
 }

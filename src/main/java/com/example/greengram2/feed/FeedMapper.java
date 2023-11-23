@@ -1,9 +1,6 @@
 package com.example.greengram2.feed;
 
-import com.example.greengram2.feed.model.FeedInsPdto;
-import com.example.greengram2.feed.model.FeedSelDto;
-import com.example.greengram2.feed.model.FeedSelVo;
-import com.example.greengram2.feed.model.FeedpicsInsPdto;
+import com.example.greengram2.feed.model.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -15,4 +12,8 @@ public interface FeedMapper {
     int insFeedPic(FeedpicsInsPdto picsPdto);
 
     List<FeedSelVo> selFeedAll(FeedSelDto dto);
+
+    int delFeed(FeedDelDto dto);
+
+    int seliuser(int ifeed);
 }

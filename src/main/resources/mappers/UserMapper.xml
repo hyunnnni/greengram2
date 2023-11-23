@@ -24,4 +24,21 @@
         FROM t_user
         WHERE uid = #{uid}
     </select>
+
+    <select id="selFeedFav">
+        SELECT COUNT(T.ifeed) AS feedCnt, COUNT(F.iuser) AS favCnt,
+        U.nm, U.pic, U.created_at AS createdAt
+        FROM t_user AS U
+        LEFT JOIN t_feed AS T
+        ON T.iuser = U.iuser
+        LEFT JOIN t_favorite AS F
+        ON T.ifeed = F.ifeed
+        WHERE U.iuser = #{targetIuser}
+    </select>
+
+    <update id="upUserPic">
+        UPDATE t_user
+        set pic = #{pic}
+        WHERE iuser = #{iuser}
+    </update>
 </mapper>

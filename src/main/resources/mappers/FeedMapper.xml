@@ -36,6 +36,16 @@
         order by B.ifeed desc
         limit #{startIdx}, #{rowCount}
     </select>
-    
+
+    <select id="seliuser">
+        SELECT iuser
+        FROM t_feed
+        where ifeed = #{ifeed}
+    </select>
+
+    <delete id="delFeed">
+        DELETE FROM t_feed
+        where ifeed = #{ifeed} and iuser = #{iuser}
+    </delete>
 
 </mapper>

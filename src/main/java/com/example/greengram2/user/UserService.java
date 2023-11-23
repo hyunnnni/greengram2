@@ -2,10 +2,7 @@ package com.example.greengram2.user;
 
 
 import com.example.greengram2.ResVo;
-import com.example.greengram2.user.model.UserSigninDto;
-import com.example.greengram2.user.model.UserSigninVo;
-import com.example.greengram2.user.model.UserSignupDto;
-import com.example.greengram2.user.model.UserSignupPdto;
+import com.example.greengram2.user.model.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.mindrot.jbcrypt.BCrypt;
@@ -53,4 +50,14 @@ public class UserService {
         }
         return svo;
     }
+
+    public UserInfoVo getprofile(int targetIuser){
+        return mapper.selFeedFav(targetIuser);
+    }
+
+    public ResVo patchUserPic (UserPatchPicDto dto){
+        int result = mapper.upUserPic(dto);
+        return new ResVo(result);
+    }
+
 }

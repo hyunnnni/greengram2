@@ -15,4 +15,6 @@ public class FeedSelVo {
     private String createdAt;
     private int isFav; //해당피드에 좋아요가 있다면 1 없다면 0
     private List<String> pics;
+    private List<FeedCommentSelVo> comments;
+    private int isMoreComment;//0없음 1 더있음
 }
