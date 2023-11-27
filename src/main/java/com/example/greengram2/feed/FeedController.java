@@ -41,6 +41,7 @@ public class FeedController {
         //Pathvariable과 비슷한 기능 이름이 다르면 value를 사용해 바꾸고 defaultValue= 값이 없으면 기본으로 이 값을 넣어주겠ㄷ
         //required = false 무조건 값이 들어와야하는지 false는 아니여도 되지만 0으로 값이 들어갈거고 없다고 리턴될 것이다
         //true는 값을 필수로 넣어야 하니 defaultvalue가 없어도 된다.
+        //"?page=원하는 숫자&loginedIuser=원하는 유저"
         log.info("targetIuser : {}", targetIuser);
         final int ROW_COUNT = 30;
         FeedSelDto dto = FeedSelDto.builder()
