@@ -46,7 +46,7 @@ public class UserController {
     public UserSigninVo postSignin(@RequestBody UserSigninDto dto){
         return service.postSignin(dto);
     }
-    //난 너무못해 바본가바 ㅜㅜ
+
     @GetMapping
     public UserInfoVo getprofile(@RequestParam(value = "target_iuser", required = true) int targetIuser){
         log.info("targetIuser : {} ", targetIuser);
