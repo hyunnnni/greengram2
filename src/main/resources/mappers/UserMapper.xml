@@ -26,7 +26,7 @@
     </select>
 
     <select id="selFeedFav">
-        SELECT COUNT(T.ifeed) AS feedCnt, COUNT(F.iuser) AS favCnt,
+        SELECT COUNT(distinct T.ifeed) AS feedCnt, COUNT(F.iuser) AS favCnt,
         U.nm, U.pic, U.created_at AS createdAt
         FROM t_user AS U
         LEFT JOIN t_feed AS T

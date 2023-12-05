@@ -4,6 +4,7 @@ import com.example.greengram2.ResVo;
 import com.example.greengram2.feed.model.*;
 import com.example.greengram2.user.model.UserSignupPdto;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Service
+@Slf4j
 public class FeedService {
     private final FeedMapper mapper;
     private final FeedPicsMapper picsMapper;
@@ -81,7 +83,7 @@ public class FeedService {
     }
 
     public ResVo delComment(FeedCommentDelDto dto){
-
+        log.info("dto {}", dto);
         int result = comMapper.delComment(dto);
         if(result == 1){
             return new ResVo(dto.getIFeedComment());

@@ -52,7 +52,7 @@ public class UserController {
         log.info("targetIuser : {} ", targetIuser);
         return service.getprofile(targetIuser);
     }
-    //멍청해서 너무 힘들어ㅜㅜ
+
     @PatchMapping("/pic")
     public ResVo patchUserPic(@RequestBody UserPatchPicDto dto){
         return service.patchUserPic(dto);

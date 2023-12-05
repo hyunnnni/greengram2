@@ -37,7 +37,7 @@ public class UserService {
     public UserSigninVo postSignin(UserSigninDto dto){
         String savedPw = mapper.selsignin(dto.getUid());
         UserSigninVo svo = new UserSigninVo();
-        svo.setResult(3);
+        svo.setResult(1);
         if (savedPw == null){
             svo.setResult(2);
             return svo;
